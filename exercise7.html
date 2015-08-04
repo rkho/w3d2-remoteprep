@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Exercise 7</title>
+    </head>
+    <body>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <h1>Exercise 7</h1>
+    <input id="type">
+
+    <label></label>
+
+    <div id="output"></div>
+
+    <script>
+
+      var nsa_surveillance = '';
+
+      $(function() {
+        $('input#type').on('keypress', function(e) {
+            nsa_surveillance += String.fromCharCode(e.keyCode);
+            $('label').text(e.keyCode);
+            $('#output').text(nsa_surveillance)
+        })
+
+        $('body').on('keypress', function(e) {
+            nsa_surveillance += String.fromCharCode(e.keyCode);
+            $('#output').text(nsa_surveillance)
+        })
+      })
+    </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Exercise 4</title>
+        <style>
+          .cat {
+            position: fixed;
+          }
+        </style>
+    </head>
+    <body>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <div>
+      <h1>Exercise 4</h1>
+      <image class="cat" src="http://cur.cursors-4u.net/nature/images3/nat264.gif">
+    </div>
+    <script>
+    $(function() {
+
+      // Change 'mousedown' with 'mousemove' if you want the image to follow at all times
+      $('body').on('mousedown', function(event) {
+        // Inspect the event in the console
+        console.log(event)
+
+        // Sets the top and left CSS properties of the image to be near our mouse's X and Y coordinates
+
+        $('.cat').css({'top': event.pageY - 20, 'left': event.pageX - 20})
+      })
+
+    })
+    </script>
+    </body>
+</html>

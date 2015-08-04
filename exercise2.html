@@ -1,0 +1,60 @@
+<!-- Exercise:
+
+Make the above code work inside a script tag in an HTML document
+Create a div with the text "show me the money". If the user clicks on it, show them the money!
+Create a div with the text "show me the Oprah". If the user clicks on it, show them the Oprah!
+Create a div with the text "show me the Opera". If the user clicks on it, show them the Opera!
+Make it so that when a user clicks on one item to show it, all the others hide first if they are already shown.
+When a user clicks on an item that is already shown, hide it instead.
+ -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Exercise 2</title>
+    </head>
+    <body>
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <div>
+        <h1>Exercise 2</h1>
+        <div id="money">show me the money
+          <br>
+          <image class="money" src="http://thefrt.com/wp-content/uploads/2013/02/money43.jpg" style="display: none">
+          </div>
+        <div id="oprah">show me the oprah
+          <br>
+          <image class="oprah" src="http://i.imgur.com/R1raY.gif" style="display: none">
+        </div>
+        <div id="opera">show me the opera
+          <br>
+          <image class="opera" src="http://static.guim.co.uk/sys-images/Guardian/About/General/2012/10/4/1349341443342/Royal-Opera-House-008.jpg" style="display: none">
+        </div>
+
+      </div>
+
+    <script>
+    $(function() {
+      $('#money').click(function() {
+        $('.oprah').hide()
+        $('.opera').hide();
+        $('.money').toggle()
+      })
+
+      $('#oprah').click(function() {
+        $('.money').hide()
+        $('.opera').hide();
+        $('.oprah').toggle()
+      })
+
+      $('#opera').click(function() {
+        $('.money').hide()
+        $('.oprah').hide()
+        $('.opera').toggle()
+      })
+    })
+    </script>
+    </body>
+</html>

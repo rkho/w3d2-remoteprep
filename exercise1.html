@@ -1,0 +1,49 @@
+<!-- An event handler is a function (subroutine) that is run each time a specific type of input is received from the user.
+
+Exercise:
+
+1. Make the above code work inside a script tag in an HTML document (you'll need a #target element on the page)
+2. Define a function beeper
+3. Create a button on the page
+4. Every time the user clicks a button, add an HTML element to the bottom of the page with the word "beep"
+5. Also change the body's background color each time a user clicks the button.  -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Exercise 1</title>
+    </head>
+    <body>
+
+    <div>
+      <h1>Exercise 1</h1>
+      <button class="testButton">Press Me</button>
+      <div id="target"></div>
+    </div>
+
+
+    <script>
+
+      // beeper function
+      var beeper = function() {
+        // grabs our #target div
+        var target = document.getElementById('target');
+        // creates a new paragraph tag element
+        var newBeep = document.createElement('p');
+        // sets the text of that tag to 'beep'
+        newBeep.innerText = 'beep';
+        // appends the element to our #target div
+        target.appendChild(newBeep);
+
+        // set the background color of the body to a random color
+        document.body.style.background = '#' + Math.random().toString(16).slice(2, 8)
+      }
+
+      // event listener that fires 'beeper' when '.testbutton' is clicked
+      document.querySelector('.testButton').addEventListener('click', beeper)
+    </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Exercise 6</title>
+    </head>
+    <body>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <h1>Exercise 6</h1>
+    <input id="color">
+    <button id="go">Click Me</button>
+
+    <div id="output"></div>
+
+    <script>
+      $(function() {
+        $('button#go').on('click', function() {
+          $('#output').text( $('input#color').val() );
+          $('body').css({background: $('input#color').val()})
+        })
+      })
+    </script>
+    </body>
+</html>
